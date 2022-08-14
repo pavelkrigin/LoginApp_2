@@ -28,6 +28,14 @@ class LoginViewController: UIViewController {
         self.view.endEditing(true)
     }
     
+//    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+//        if identifier == "Pavel" {
+//                    return true
+//                } else if identifier != "Pavel" {
+//                    return false
+//                }
+//    }
+    
     @IBAction func unwindSegue(_ segue: UIStoryboardSegue) {
         userName.text = ""
         passWord.text = ""
