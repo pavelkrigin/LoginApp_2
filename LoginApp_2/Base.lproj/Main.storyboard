@@ -40,6 +40,7 @@
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="Log In"/>
                                         <connections>
+                                            <action selector="logInButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qv0-ZS-aDP"/>
                                             <segue destination="rqj-BG-tDV" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="flipHorizontal" id="dEo-QI-pi9"/>
                                         </connections>
                                     </button>
@@ -57,6 +58,9 @@
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" title="Forgot Password?"/>
+                                                <connections>
+                                                    <action selector="alert" destination="BYZ-38-t0r" eventType="touchUpInside" id="qCP-fl-Jpk"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -94,7 +98,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KcN-jt-Ano">
-                                <rect key="frame" x="134" y="423" width="107" height="35"/>
+                                <rect key="frame" x="148.5" y="423" width="78" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="4wa-IO-28b"/>
                                 </constraints>
@@ -127,6 +131,7 @@
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="User Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cIg-Wk-ict">
                                         <rect key="frame" x="117.5" y="0.0" width="141" height="36"/>
+                                        <color key="backgroundColor" red="0.82362941089999997" green="0.86078917980000003" blue="0.82600611670000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
@@ -143,14 +148,16 @@
                         <color key="backgroundColor" red="0.82362941094305753" green="0.86078917980000003" blue="0.82600611673911284" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="hdX-SW-7I3" firstAttribute="centerX" secondItem="UR6-gU-EbU" secondAttribute="centerX" id="0wm-iD-ApH"/>
-                            <constraint firstItem="KcN-jt-Ano" firstAttribute="leading" secondItem="NGH-qE-XA0" secondAttribute="leading" constant="134" id="6Ss-Ii-EgQ"/>
                             <constraint firstItem="hdX-SW-7I3" firstAttribute="centerY" secondItem="UR6-gU-EbU" secondAttribute="centerY" id="KHq-iA-4br"/>
                             <constraint firstItem="1oJ-u0-9cR" firstAttribute="top" secondItem="NGH-qE-XA0" secondAttribute="top" constant="123" id="Lgu-aI-GfY"/>
+                            <constraint firstItem="KcN-jt-Ano" firstAttribute="centerX" secondItem="UR6-gU-EbU" secondAttribute="centerX" id="RiL-Vf-duW"/>
                             <constraint firstItem="1oJ-u0-9cR" firstAttribute="centerX" secondItem="UR6-gU-EbU" secondAttribute="centerX" id="Vgy-zf-a4p"/>
-                            <constraint firstItem="NGH-qE-XA0" firstAttribute="trailing" secondItem="KcN-jt-Ano" secondAttribute="trailing" constant="134" id="Vml-vI-O6g"/>
                             <constraint firstItem="NGH-qE-XA0" firstAttribute="bottom" secondItem="KcN-jt-Ano" secondAttribute="bottom" constant="209" id="g3n-MC-YUc"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="userNameWelcome" destination="cIg-Wk-ict" id="b4j-6H-Alu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IoX-QS-ogp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="ZGq-GL-JN9" userLabel="Exit" sceneMemberID="exit"/>

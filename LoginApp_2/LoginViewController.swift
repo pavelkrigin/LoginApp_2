@@ -20,15 +20,38 @@ class LoginViewController: UIViewController {
         
     }
     
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        guard let welcomeVC = segue.destination as? WelcomeViewController else { return }
-//        welcomeVC =
-////        guard segue.destination is WelcomeViewController else { return }
-//
-//}
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let welcomeVC = segue.destination as? WelcomeViewController else { return }
+        welcomeVC.welcomeUserText = userName.text ?? ""
+        
+}
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
     @IBAction func unwindSegue(_ segue: UIStoryboardSegue) {
+        userName.text = ""
+        passWord.text = ""
         
     }
-
+    
+    @IBAction func logInButtonPressed() {
+        guard let inputText = userName.text, !inputText.isEmpty else {
+            showAlert(with: "Invalid login or password", and: "Plese, enter correct login and password")
+            return
+        }
+    }
 }
+//MARK: - UIAlertController
+extension LoginViewController {
+    private func showAlert(with logInButton: String, and message: String) {
+        let alert = UIAlertController(title: logInButton, message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default)
+        
+        alert.addAction(okAction)
+        present(alert, animated: true)
+    }
+}
+
 

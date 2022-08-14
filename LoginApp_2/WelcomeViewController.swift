@@ -8,16 +8,15 @@
 import UIKit
 
 class WelcomeViewController: UIViewController {
-    
-    
+        
+    @IBOutlet var userNameWelcome: UITextField!
     @IBOutlet var logOutButton: UIButton!
     
-//    var welcomeUserText: String
+    var welcomeUserText = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        welcomeUser = welcomeUserText
-
+        userNameWelcome.text = welcomeUserText
         
     }
         
