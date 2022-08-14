@@ -40,7 +40,7 @@
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="Log In"/>
                                         <connections>
-                                            <action selector="logInButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qv0-ZS-aDP"/>
+                                            <action selector="logInButtonPressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="Bkc-6A-NB7"/>
                                             <segue destination="rqj-BG-tDV" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="flipHorizontal" id="dEo-QI-pi9"/>
                                         </connections>
                                     </button>
@@ -52,6 +52,9 @@
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" title="Forgot User Name?"/>
+                                                <connections>
+                                                    <action selector="forgotUNPressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="VNA-xo-LWT"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L5G-cM-FKz">
                                                 <rect key="frame" x="195" y="0.0" width="155" height="34"/>
@@ -59,7 +62,7 @@
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" title="Forgot Password?"/>
                                                 <connections>
-                                                    <action selector="alert" destination="BYZ-38-t0r" eventType="touchUpInside" id="qCP-fl-Jpk"/>
+                                                    <action selector="forgotPWPressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="idL-qN-x0x"/>
                                                 </connections>
                                             </button>
                                         </subviews>

@@ -17,14 +17,12 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let welcomeVC = segue.destination as? WelcomeViewController else { return }
         welcomeVC.welcomeUserText = userName.text ?? ""
-        
-}
+    }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
@@ -41,6 +39,16 @@ class LoginViewController: UIViewController {
             showAlert(with: "Invalid login or password", and: "Plese, enter correct login and password")
             return
         }
+    }
+    
+    @IBAction func forgotUNPressed() {
+        showAlert(with: "OOPS!", and: "Your name is Pavel")
+            return
+    }
+        
+    @IBAction func forgotPWPressed() {
+        showAlert(with: "OOPS!", and: "Your password is Password")
+        return
     }
 }
 //MARK: - UIAlertController
