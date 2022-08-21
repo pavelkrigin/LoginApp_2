@@ -12,26 +12,30 @@ final class LoginViewController: UIViewController {
     @IBOutlet var userNameTF: UITextField!
     @IBOutlet var passWordTF: UITextField!
     
-    private let user = "Pavel"
-    private let password = "123"
+    let user = User.getUserData()
     
     //MARK: - Override functions
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let welcomeVC = segue.destination as? WelcomeViewController else { return }
-        //привязка опционала
-//        welcomeVC.welcomeUserText = userNameTF.text ?? ""
-        welcomeVC.welcomeUserText = user
+        guard let tabBarController = segue.destination as? UITapBarController else { return }
+        guard let viewControllers = tabBarController.viewControllers else { return }
+        
+        viewControllers.forEach {
+            if let welcomeVC = $0 as? WelcomeViewController {
+                welcomeVC.user = user
+            } else if let navigationVC = $0 as? UINavigationController {
+                guard let userInfoVC = navigationVC.topViewController as? UserInfoViewController
+                else { return }
+                userInfoVC.user = user
+            
+            }
+        }
     }
    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
         view.endEditing(true)
     }
-    
-//    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
-//        identifier == user
-//    } // - получается этот метод не нужен? 
-    
+      
     //MARK: - IBAction functions
     @IBAction func unwindSegue(_ segue: UIStoryboardSegue) {
         userNameTF.text = ""
@@ -39,38 +43,34 @@ final class LoginViewController: UIViewController {
     }
     
     @IBAction func logInButtonPressed() { //IBAct срабатывает когда нажимаешь кнопку
-        guard userNameTF.text == user && passWordTF.text == password else {
-            showAlert(with: "Invalid login or password", and: "Please, enter correct login and password")
+        guard userNameTF.text == user.login && passWordTF.text == user.passWord else {
+            showAlert(title: "Invalid login or password",
+                      message: "Please, enter correct login and password",
+                      textField: passWordTF
+            )
             return
         }
-//        shouldPerformSegue(withIdentifier: <#T##String#>, sender: nil) - заменил на performSegue
-        performSegue(withIdentifier: "openWelcomeVC", sender: nil) //что этот метод делает? - инициирует вызов метода prepare(for Segue
+        performSegue(withIdentifier: "openWelcomeVC", sender: nil)
     }
     
-    @IBAction func forgotUNPressed() {
-        showAlert(with: "OOPS!", and: "Your name is \(user)😉")
-    }
+
+@IBAction func forgotRegisterData(_ sender: UIButton) { // привязать к двум кнопкам
+    sender.tag == 0
+    ? showAlert(title: "OOPS!", message: "Your name is \(user.login)")
+    : showAlert(title: "OOPS!", message: "Your password is \(user.passWord)")
+}
+
+//MARK: - private functions
+
+    private func showAlert(title: String, message: String, textField: UITextField? = nil ) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+    let okAction = UIAlertAction(title: "OK", style: .default) { _ in textField?.text = ""
         
-    @IBAction func forgotPWPressed() {
-        showAlert(with: "OOPS!", and: "Your password is \(password)😉")
+    }
+    alert.addAction(okAction)
+    present(alert, animated: true)
     }
 }
 
-//@IBAction func forgotRegisterData(_ sender: UIButton) { // привязать к двум кнопкам
-//    sender.tag == 0
-//    ? showAlert(with: "OOPS!", and: "Your name is \(user)") // это ветка если
-//    : showAlert(with: "OOPS!", and: "Your password is \(password)") // это ветка то
-//}
-
-//MARK: - UIAlertController
-extension LoginViewController {
-    private func showAlert(with logInButton: String, and message: String) {
-        let alert = UIAlertController(title: logInButton, message: message, preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "OK", style: .default)
-        
-        alert.addAction(okAction)
-        present(alert, animated: true)
-    }
-}
 
 
