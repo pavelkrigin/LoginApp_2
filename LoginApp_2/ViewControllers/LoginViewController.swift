@@ -12,17 +12,17 @@ final class LoginViewController: UIViewController {
     @IBOutlet var userNameTF: UITextField!
     @IBOutlet var passWordTF: UITextField!
     
-    let user = User.getUserData()
+    private let user = User.getUserData()
     
     //MARK: - Override functions
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let tabBarController = segue.destination as? UITapBarController else { return }
+        guard let tabBarController = segue.destination as? UITabBarController else { return }
         guard let viewControllers = tabBarController.viewControllers else { return }
         
-        viewControllers.forEach {
-            if let welcomeVC = $0 as? WelcomeViewController {
+        viewControllers.forEach { viewController in
+            if let welcomeVC = viewController as? WelcomeViewController {
                 welcomeVC.user = user
-            } else if let navigationVC = $0 as? UINavigationController {
+            } else if let navigationVC = viewController as? UINavigationController {
                 guard let userInfoVC = navigationVC.topViewController as? UserInfoViewController
                 else { return }
                 userInfoVC.user = user
@@ -50,7 +50,7 @@ final class LoginViewController: UIViewController {
             )
             return
         }
-        performSegue(withIdentifier: "openWelcomeVC", sender: nil)
+        performSegue(withIdentifier: "showWelcomeVC", sender: nil)
     }
     
 

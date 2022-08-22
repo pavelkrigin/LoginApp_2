@@ -15,9 +15,8 @@
 		CA4C0E0928A6B5F200E50410 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA4C0E0728A6B5F200E50410 /* LaunchScreen.storyboard */; };
 		CA4C0E1928A7FE0600E50410 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4C0E1828A7FE0600E50410 /* WelcomeViewController.swift */; };
 		CA68C6C328AD63C300889AB2 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA68C6C228AD63C300889AB2 /* User.swift */; };
-		CA68C6C528B2816700889AB2 /* TapBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA68C6C428B2816700889AB2 /* TapBarController.swift */; };
-		CA68C6C728B2821B00889AB2 /* UserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA68C6C628B2821B00889AB2 /* UserInfoViewController.swift */; };
-		CA68C6C928B2824A00889AB2 /* UserBioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA68C6C828B2824A00889AB2 /* UserBioViewController.swift */; };
+		CA68C6CB28B2FAC800889AB2 /* UserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA68C6CA28B2FAC700889AB2 /* UserInfoViewController.swift */; };
+		CA68C6CD28B2FD6B00889AB2 /* UserBioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA68C6CC28B2FD6B00889AB2 /* UserBioViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,9 +30,8 @@
 		CA4C0E0A28A6B5F200E50410 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CA4C0E1828A7FE0600E50410 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		CA68C6C228AD63C300889AB2 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		CA68C6C428B2816700889AB2 /* TapBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapBarController.swift; sourceTree = "<group>"; };
-		CA68C6C628B2821B00889AB2 /* UserInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoViewController.swift; sourceTree = "<group>"; };
-		CA68C6C828B2824A00889AB2 /* UserBioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserBioViewController.swift; sourceTree = "<group>"; };
+		CA68C6CA28B2FAC700889AB2 /* UserInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoViewController.swift; sourceTree = "<group>"; };
+		CA68C6CC28B2FD6B00889AB2 /* UserBioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserBioViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,10 +78,9 @@
 			isa = PBXGroup;
 			children = (
 				CA4C0E0028A6B5F000E50410 /* LoginViewController.swift */,
-				CA68C6C428B2816700889AB2 /* TapBarController.swift */,
 				CA4C0E1828A7FE0600E50410 /* WelcomeViewController.swift */,
-				CA68C6C628B2821B00889AB2 /* UserInfoViewController.swift */,
-				CA68C6C828B2824A00889AB2 /* UserBioViewController.swift */,
+				CA68C6CA28B2FAC700889AB2 /* UserInfoViewController.swift */,
+				CA68C6CC28B2FD6B00889AB2 /* UserBioViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -186,12 +183,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				CA68C6C328AD63C300889AB2 /* User.swift in Sources */,
-				CA68C6C728B2821B00889AB2 /* UserInfoViewController.swift in Sources */,
-				CA68C6C528B2816700889AB2 /* TapBarController.swift in Sources */,
+				CA68C6CB28B2FAC800889AB2 /* UserInfoViewController.swift in Sources */,
 				CA4C0E0128A6B5F000E50410 /* LoginViewController.swift in Sources */,
 				CA4C0E1928A7FE0600E50410 /* WelcomeViewController.swift in Sources */,
 				CA4C0DFD28A6B5F000E50410 /* AppDelegate.swift in Sources */,
-				CA68C6C928B2824A00889AB2 /* UserBioViewController.swift in Sources */,
+				CA68C6CD28B2FD6B00889AB2 /* UserBioViewController.swift in Sources */,
 				CA4C0DFF28A6B5F000E50410 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
