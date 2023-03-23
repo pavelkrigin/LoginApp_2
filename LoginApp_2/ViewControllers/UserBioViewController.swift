@@ -7,7 +7,7 @@
 
 import UIKit
 
-class UserBioViewController: UIViewController {
+final class UserBioViewController: UIViewController {
 
     @IBOutlet var userBioTextView: UITextView!
         
